@@ -13,7 +13,6 @@ namespace classes
             students.Add(new Student("Thomas", "Jefferson"));
             students.Add(new Student("James", "Madison"));
             students.Add(new Student("James", "Monroe"));
-            students.Add(new Student("Fred", "Adams"));
 
             int removeStudent = 0;
             bool firstBoot = true;
