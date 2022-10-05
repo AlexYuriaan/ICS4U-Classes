@@ -42,14 +42,19 @@ namespace classes
                 }
                 Console.WriteLine("Please select a program, or press X to quit");
                 Console.WriteLine("1. List of Students\n2. View Student Info\n3. Add Student\n4. Remove Student\n" +
-                    "5. Search for Student\n6. Edit Student\n 7. X. QUIT");
+                    "5. Search for Student\n6. Edit Student\n7. Sort List\nX. QUIT");
                 menuSelect = Console.ReadLine();
                 if (menuSelect == "1")
                 {
+                    Console.WriteLine("-----------------------------");
+
                     for (int i = 0; i < students.Count; i++)
                     {
-                        Console.WriteLine(students[i].ToString());    
+
+                        Console.WriteLine($"{i + 1}: {students[i].ToString()}");
                     }
+                    Console.WriteLine("-----------------------------");
+
                 }
                 else if (menuSelect == "2")
                 {
@@ -82,11 +87,22 @@ namespace classes
                 else if (menuSelect == "7")
                 {
                     students.Sort();
+                    Console.WriteLine("-----------------------------");
+                    for (int i = 0; i < students.Count; i++)
+                    {
+                        Console.WriteLine($"{i+1}: {students[i].ToString()}");
+                    }
+                    Console.WriteLine("-----------------------------");
+
                 }
                 else if (menuSelect.ToUpper() == "X")
                 {
                     Console.WriteLine("Thank you for using the program.");
                     Environment.Exit(0);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Input! Please enter a number (1-7) or X to quit.");
                 }
 
             }
